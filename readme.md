@@ -4,6 +4,10 @@
 Georef_fracture_traces is a Python notebook that was designed to create 3D georeferenced fracture networks from digitized fracture traces from outcrop photos. In addition the 3D fracture network can be projected onto a plane to generate a 2D georeferenced fracture network that can be used for fracture network analysis and further fluid flow or geomechanical modelling workflows. Georeferencing can be performed using a first or second order polynomial. 
 
 
+Outcrop                           |  Georeferenced fractures
+:--------------------------------:|:-------------------------------------:
+![](fig/outcrop_photo_small.jpg)  |  ![](fig/fractures_georef_3d_fig.png)
+
 ## Dependencies
 
 The notebook uses Python 3.x and a number of additional Python packages: numpy, matplotlib, pandas, geopandas, scipy, shapely, sympy.
@@ -24,13 +28,21 @@ The easiest way to install these it to use Anaconda Python: https://www.anaconda
 
 
 ![fig/input_shapefile.png](fig/input_shapefile.png)
-*The digitized but still not georeferenced fracture network. This is a digitized set of fractures from an outcrop in the Harz Mountains, Germany that was provided by Katie Ford, University of Goettingen.*
+
+*The digitized but still not georeferenced fracture network. This is a digitized set of fractures from an outcrop in the Harz Mountains, Germany that was provided by Katherine Ford, University of Goettingen.*
 
 ![fig/fractures_georef_3d_fig.png](fig/fractures_georef_3d_fig.png)
+
 *3D figure of the georeferenced fracture network*
 
 ![fig/fractures_projected_to_plane.png](fig/fractures_projected_to_plane.png)
-*The fracture network projected onto a plane*
+
+*The georeferenced fracture network projected onto a plane*
+
+
+![fig/outcrop_photo_small.jpg](fig/outcrop_photo_small.jpg)
+
+*The outcrop. Photo supplied by Katherine Ford, University of Goettingen*
 
 
 ## Authors
