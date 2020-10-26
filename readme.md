@@ -23,13 +23,13 @@ The easiest way to install these it to use Anaconda Python: https://www.anaconda
 8. The notebook should also have generated a number of figures of the model results. These include a figure with the georefencing results for the control points ([fig/transform_error.pdf](fig/transform_error.pdf)), a 3D figure of the georeferenced fracture traces ([fig/fractures_georef_3d_fig.pdf](fig/fractures_georef_3d_fig.pdf)) and a figure of the same georeferenced fracture traces viewed from three directions ([fig/fractures_georef_2d_fig.pdf](fig/fractures_georef_2d_fig.pdf)). THe georeferencing results for the control points are also saved as a csv file ([data/georeferencing_results_control_pts.csv](data/georeferencing_results_control_pts.csv)) that can be inspected using excel, openoffice or a texteditor.
 
 
-![fig/input_shapefile.pdf](fig/input_shapefile.pdf)
-*The digitized but still not georeferenced fracture network*
+![fig/input_shapefile.png](fig/input_shapefile.png)
+*The digitized but still not georeferenced fracture network. This is a digitized set of fractures from an outcrop in the Harz Mountains, Germany that was provided by Katie Ford, University of Goettingen.*
 
-![fig/fractures_georef_3d_fig.pdf](fig/fractures_georef_3d_fig.pdf)
+![fig/fractures_georef_3d_fig.png](fig/fractures_georef_3d_fig.png)
 *3D figure of the georeferenced fracture network*
 
-![fig/fractures_projected_to_plane.pdf](fig/fractures_projected_to_plane.pdf)
+![fig/fractures_projected_to_plane.png](fig/fractures_projected_to_plane.png)
 *The fracture network projected onto a plane*
 
 
