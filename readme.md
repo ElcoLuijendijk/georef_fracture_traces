@@ -1,7 +1,7 @@
 # Georef_fracture_traces: Jupyter notebook to georeference fracture trace maps
 
 ## Description
-[georef_fracture_traces.ipynb](georef_fracture_traces.ipynb) is a Python notebook that was designed to create 3D georeferenced fracture networks from digitized fracture traces from outcrop photos. In addition the 3D fracture network can be projected onto a plane to generate a 2D georeferenced fracture network that can be used for fracture network analysis and further fluid flow or geomechanical modelling workflows. Georeferencing can be performed using a first or second order polynomial. 
+[georef_fracture_traces.ipynb](georef_fracture_traces.ipynb) is a Jupyter notebook that was designed to create 3D georeferenced fracture networks from digitized fracture traces from outcrop photos. In addition the 3D fracture network can be projected onto a plane to generate a 2D georeferenced fracture network that can be used for fracture network analysis and further fluid flow or geomechanical modelling workflows. The starting point is a vector (line) shapefile with the locations of fractures. This can be obtained for instance by importing an outcrop photo to QGIS or other GIS software and manually drawing the fracture lines on the photo. Georeferencing of the fracture network can be performed using a first or second order polynomial transform. The 3D georefernced fracture dataset is saved as a shapefile and as a GeoJSON file. In addition the georeferenced 3D fracture network can be projected back onto a vertical, horizontal or inclined plane. The resulting projected 2D fracture network is also saved as a shapefile and can be used for further analysis of the fracture network using software such as [NetworkGT](https://github.com/BjornNyberg/NetworkGT). 
 
 
 Outcrop                           |  Georeferenced fractures
@@ -10,7 +10,7 @@ Outcrop                           |  Georeferenced fractures
 
 ## Dependencies
 
-The notebook uses Python 3.x and a number of additional Python packages: numpy, matplotlib, pandas, geopandas, scipy, shapely, sympy.
+The notebook requires [Jupyter](https://jupyter.org/), [Python 3.x](https://www.python.org/) and a number of additional Python packages: numpy, matplotlib, pandas, geopandas, scipy, shapely and sympy.
 
 The easiest way to install these it to use [Anaconda Python](https://www.anaconda.com/products/individual).
 
@@ -33,7 +33,7 @@ The notebook should also have generated a number of figures. These include a fig
 
 ![fig/input_shapefile.png](fig/input_shapefile.png)
 
-*The digitized but still not georeferenced fracture network. This is a digitized set of fractures from an outcrop in the Harz Mountains, Germany that was provided by Katherine Ford, University of Göttingen.*
+*The digitized but still not georeferenced fracture network. This is a digitized set of fractures from an outcrop in the Harz Mountains, Germany that was provided by Katherine Ford, University of Göttingen. The fracture network was digitized by importing hte oucrop photo in QGIS and manually creating a shapefile with lines that trace the fractures in the photo.*
 
 ![fig/fractures_georef_3d_fig.png](fig/fractures_georef_3d_fig.png)
 
