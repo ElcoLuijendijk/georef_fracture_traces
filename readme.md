@@ -1,25 +1,28 @@
 # Georef_fracture_traces: Jupyter notebook to georeference fracture trace maps
 
 ## Description
-[georef_fracture_traces.ipynb](georef_fracture_traces.ipynb) is a Jupyter notebook that was designed to create 3D georeferenced fracture networks from digitized fracture traces from outcrop photos. In addition the 3D fracture network can be projected onto a plane to generate a 2D georeferenced fracture network that can be used for fracture network analysis and further fluid flow or geomechanical modelling workflows. The starting point is a vector (line) shapefile with the locations of fractures. This can be obtained for instance by importing an outcrop photo to QGIS or other GIS software and manually drawing the fracture lines on the photo. Georeferencing of the fracture network can be performed using a first or second order polynomial transform. The 3D georefernced fracture dataset is saved as a shapefile and as a GeoJSON file. In addition the georeferenced 3D fracture network can be projected back onto a vertical, horizontal or inclined plane. The resulting projected 2D fracture network is also saved as a shapefile and can be used for further analysis of the fracture network using software such as [NetworkGT](https://github.com/BjornNyberg/NetworkGT). 
+[georef_fracture_traces.ipynb](georef_fracture_traces.ipynb) is a Jupyter notebook that was designed to create 3D georeferenced fracture networks from digitized fracture traces from outcrop photos. In addition the 3D fracture network can be projected onto a plane to generate a 2D georeferenced fracture network that can be used for fracture network analysis and further fluid flow or geomechanical modelling workflows. The starting point is a vector (line) shapefile with the locations of fractures. This can be obtained for instance by importing an outcrop photo to QGIS or other GIS software and manually drawing the fracture lines on the photo. Georeferencing of the fracture network can be performed using a first or second order polynomial transform. The 3D georeferenced fracture dataset is saved as a shapefile and as a GeoJSON file. In addition the georeferenced 3D fracture network can be projected back onto a vertical, horizontal or inclined plane. The resulting projected 2D fracture network is also saved as a shapefile and can be used for further analysis of the fracture network using software such as [NetworkGT](https://github.com/BjornNyberg/NetworkGT). 
 
 
 Outcrop                           |  Georeferenced fractures
 :--------------------------------:|:-------------------------------------:
 ![](fig/outcrop_photo_small.jpg)  |  ![](fig/fractures_georef_3d_fig.png)
 
+
 ## Dependencies
 
 The notebook requires [Jupyter](https://jupyter.org/), [Python 3.x](https://www.python.org/) and a number of additional Python packages: numpy, matplotlib, pandas, geopandas, scipy, shapely and sympy.
 
-The easiest way to install these it to use [Anaconda Python](https://www.anaconda.com/products/individual).
+The easiest way to install these it to use [Anaconda Python](https://www.anaconda.com/products/individual) or another Python distribution.
 
 
 ## Workflow
 
 1. Create a shapefile consisting of line segments of the locations of fractures in an (unreferenced) outcrop photo. See the shapefile [data/fractures.shp](data/fractures.shp) for an example.
-2. Create a 2nd shapefile with ground control points, i.e., points in the outcrop photo for which you know the coordinates. Add three columns to this shapefile named X, Y and ELEVATION and add the coordinates to these columns. See the shapefile [data/control_pts.shp](data/control_pts.shp) for an example.
-3. Create a 3rd shapefile that contains three points that define a plane. The georeferenced fracture network will be projected to this plane and saved as a new 2D shapefile. This step is optional. In case of a perfectly horizontally or vertically oriented outcrop you can also let the notebook define a plane for you by setting the variable ``get_plane_pts_from_file = False``. The file should follow the same format as the control points shapefile. Note that the plane defined by these points should be large enough to cover the entire fracture network. For example if the plane is defined at x coordinate = 5 m at x coordinate = 10 m, but one of the fractures is located at x = 1 m, then the projection to the plane will distort the fracture image. In this case one would have to look for a point that defines the plane with the x coordinate = 1 m or less.
+2. Create a 2nd shapefile with ground control points, i.e., points in the outcrop photo for which you know the coordinates. Add three columns to the attribute table of this shapefile named X, Y and ELEVATION and add the coordinates to these columns. See the shapefile [data/control_pts.shp](data/control_pts.shp) for an example.
+3. 
+    a. Create a 3rd shapefile that contains three points that define a plane (optional). The georeferenced fracture network will be projected to this plane and saved as a new 2D shapefile. The file should follow the same format as the control points shapefile. Note that the plane defined by these points should be large enough to cover the entire fracture network. For example if the plane is defined at x coordinate = 5 m at x coordinate = 10 m, but one of the fractures is located at x = 1 m, then the projection to the plane will distort the fracture image. In this case one would have to look for a point that defines the plane with the x coordinate = 1 m or less.
+    b. Or in case of a perfectly horizontally or vertically oriented outcrop one can skip the creation of a plane point shapefile and instead let the notebook create a vertical or horizontal plane. In this case one needs to set the variable ``get_plane_pts_from_file = False``. In addition you can tell the notebook whether your outcrop is oriented vertically or horizontally by setting the variable ``plane_orientation`` to ``'vertical'`` or ``'horizontal'``.
 4. Start the jupyter notebook [georef_fracture_traces.ipynb](georef_fracture_traces.ipynb) and update the variables ``shpfile`` and ``control_pt_file`` with the names of your fracture network and control point shapefiles that you created in step 1 and 2
 5. Update the variable ``plane_pt_file`` to point to the shapefile with the points that define the plane, i.e., the file that you created in step 3. Note that when you choose the option ``get_plane_pts_from_file = False`` then this step is not needed.
 6. Run the notebook and inspect the text and images that were generated by the notebook and the output files to make sure everything went well.
@@ -33,7 +36,7 @@ The notebook should also have generated a number of figures. These include a fig
 
 ![fig/input_shapefile.png](fig/input_shapefile.png)
 
-*The digitized but still not georeferenced fracture network. This is a digitized set of fractures from an outcrop in the Harz Mountains, Germany that was provided by Katherine Ford, University of Göttingen. The fracture network was digitized by importing hte oucrop photo in QGIS and manually creating a shapefile with lines that trace the fractures in the photo.*
+*The digitised but still not georeferenced fracture network. This is a digitised set of fractures from an outcrop in the Harz Mountains, Germany that was provided by Katherine Ford, University of Göttingen. The fracture network was digitised by importing the oucrop photo in QGIS and manually creating a shapefile with lines that trace the fractures in the photo.*
 
 ![fig/fractures_georef_3d_fig.png](fig/fractures_georef_3d_fig.png)
 
