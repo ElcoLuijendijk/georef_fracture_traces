@@ -57,7 +57,7 @@ The notebook should also have generated a number of figures. These include a fig
 
 
 ## Authors
-* **Elco Luijendijk**, University fo Göttingen, <elco.luijendijk-at-posteo.de>
+* **Elco Luijendijk**, University of Göttingen, <elco.luijendijk-at-posteo.de>
 
 
 ## Reference
