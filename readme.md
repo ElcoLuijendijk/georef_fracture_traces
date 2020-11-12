@@ -1,5 +1,7 @@
 # Georef_fracture_traces: Jupyter notebook to georeference fracture trace maps
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4250778.svg)](https://doi.org/10.5281/zenodo.4250778)
+
 ## Description
 [georef_fracture_traces.ipynb](georef_fracture_traces.ipynb) is a Jupyter notebook that was designed to create 3D georeferenced fracture networks from digitised fracture traces from outcrop photos. In addition the 3D fracture network can be projected onto a plane to generate a 2D georeferenced fracture network that can be used for fracture network analysis and further fluid flow or geomechanical modelling workflows. 
 
@@ -25,7 +27,7 @@ The easiest way to install these it to use [Anaconda Python](https://www.anacond
 1. Create a shapefile consisting of line segments of the locations of fractures in an (unreferenced) outcrop photo. See the shapefile [data/fractures.shp](data/fractures.shp) for an example.
 2. Create a 2nd shapefile with ground control points, i.e., points in the outcrop photo for which you know the coordinates. Add three columns to the attribute table of this shapefile named X, Y and ELEVATION and add the coordinates to these columns. See the shapefile [data/control_pts.shp](data/control_pts.shp) for an example.
 3. 
-    1. Create a 3rd shapefile that contains three points that define a plane (optional). The georeferenced fracture network will be projected to this plane and saved as a new 2D shapefile. The file should follow the same format as the control points shapefile. Note that the plane defined by these points should be large enough to cover the entire fracture network. For example if the plane is defined at x coordinate = 5 m at x coordinate = 10 m, but one of the fractures is located at x = 1 m, then the projection to the plane will distort the fracture image. In this case one would have to look for a point that defines the plane with the x coordinate = 1 m or less.
+    1. Create a 3rd shapefile that contains three points that define a plane (optional). These points should define two lines that have an angle of exactly 90 degrees. The georeferenced fracture network will be projected to this plane and saved as a new 2D shapefile. The file should follow the same format as the control points shapefile. Note that the plane defined by these points should be large enough to cover the entire fracture network. For example if the plane is defined at x coordinate = 5 m at x coordinate = 10 m, but one of the fractures is located at x = 1 m, then the projection to the plane will distort the fracture image. In this case one would have to look for a point that defines the plane with the x coordinate = 1 m or less.
     2. Or in case of a perfectly horizontally or vertically oriented outcrop one can skip the creation of a plane point shapefile and instead let the notebook create a vertical or horizontal plane. In this case one needs to set the variable ``get_plane_pts_from_file = False``. In addition you can tell the notebook whether your outcrop is oriented vertically or horizontally by setting the variable ``plane_orientation`` to ``'vertical'`` or ``'horizontal'``.
 4. Start the jupyter notebook [georef_fracture_traces.ipynb](georef_fracture_traces.ipynb) and update the variables ``shpfile`` and ``control_pt_file`` with the names of your fracture network and control point shapefiles that you created in step 1 and 2
 5. Update the variable ``plane_pt_file`` to point to the shapefile with the points that define the plane, i.e., the file that you created in step 3. Note that when you choose the option ``get_plane_pts_from_file = False`` then this step is not needed.
@@ -62,6 +64,11 @@ The notebook should also have generated a number of figures. These include a fig
 
 ## Reference
 
+This notebook has been published at Zenodo. Please cite the following reference if you publish any work that uses this notebook:
+
+Luijendijk, E. (2020). georef_fracture_traces: Jupyter notebook to georeference fracture trace maps. Zenodo. [http://doi.org/10.5281/zenodo.4250778](http://doi.org/10.5281/zenodo.4250778)
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4250778.svg)](https://doi.org/10.5281/zenodo.4250778)
 
 ## License
 This project is licensed under the GNU lesser general public license (LGPL v3). See the [LICENSE.txt](LICENSE.txt) file for details.
