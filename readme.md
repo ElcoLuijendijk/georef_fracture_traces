@@ -58,6 +58,11 @@ The notebook should also have generated a number of figures. These include a fig
 *The outcrop. Photo supplied by Katherine Ford, University of Göttingen*
 
 
+## Converting line shapes to midpoint, lengths and angles:
+
+For some numerical model workflows it may be useful to calculate the coordinates of the midpoints of the fracture lines along with the length and angle of the lines. This can be done in an additional jupyter notebook [calculate_midpoints_lengths_and_angles.ipynb](calculate_midpoints_lengths_and_angles.ipynb). You can specify a shapefile in this notebook by changing the variable ``fn_in``. After running the notebook the results will be saved as a csv file, see for [data/midpoints_lengths_angles.csv](data/midpoints_lengths_angles.csv) for an example of the output.
+
+
 ## Authors
 * **Elco Luijendijk**, University of Göttingen, <elco.luijendijk-at-posteo.de>
 
